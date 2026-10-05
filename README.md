@@ -145,11 +145,21 @@ UDP 로 나가서 통과하지 못합니다. noVNC 는 HTTP 와 WebSocket 만 �
 
 ### 접속
 
-컨테이너가 뜨면 **서빙 엔드포인트 URL 을 브라우저에서 열면** 바로 데스크톱 화면입니다.
+컨테이너가 뜨면 아래 주소를 브라우저에서 엽니다. **`?path=` 파라미터가 반드시 필요합니다.**
 
 ```
-https://ap-1.aieev.cloud/endpoints/isaac-sim-test
+https://ap-1.aieev.cloud/endpoints/isaac-sim-test/vnc.html?path=endpoints/isaac-sim-test/websockify&autoconnect=true&resize=scale
 ```
+
+AIEEV 게이트웨이가 `/endpoints/<이름>/` 프리픽스를 붙이는데, noVNC 는 기본적으로
+루트(`/websockify`)로 WebSocket 을 열려고 해서 연결이 실패합니다. `path` 로 실제 경로를
+알려줘야 붙습니다. 연결되면 탭 제목이 `<컨테이너ID>:0 - noVNC` 로 바뀝니다.
+
+프리픽스 없이 `.../endpoints/isaac-sim-test` 만 열면 noVNC 페이지는 뜨지만
+"noVNC에 오류가 발생했습니다" 가 표시됩니다.
+
+접속 직후 화면은 **검은색**입니다. Xvfb 빈 데스크톱이라 정상이며,
+아래처럼 앱을 띄우면 화면에 나타납니다.
 
 ### Isaac Sim 띄우기
 
