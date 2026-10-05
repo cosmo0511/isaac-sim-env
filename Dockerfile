@@ -32,6 +32,10 @@ FROM nvcr.io/nvidia/isaac-lab@sha256:feb7e318b5c5abb1a385e9b5ec027cdc6fc03567dd1
 
 SHELL ["/bin/bash", "-c"]
 
+# GHCR 패키지를 이 레포에 연결합니다 (패키지 페이지에 소스 링크가 생깁니다)
+LABEL org.opencontainers.image.source="https://github.com/cosmo0511/isaac-sim-env"
+LABEL org.opencontainers.image.description="Isaac Sim 5.1 / Isaac Lab 2.3.1 team environment with noVNC GUI"
+
 # --- 개발 편의 도구 ---
 # ROS 2 패키지(ros-humble-*)는 여기에 절대 추가하지 마세요.
 # Humble 은 Python 3.10 을 끌어와 Isaac Sim 의 3.11 과 충돌합니다.

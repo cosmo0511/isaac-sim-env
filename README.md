@@ -45,7 +45,7 @@ nvcr.io/nvidia/isaac-lab:2.3.1
 
 | 필드 | 값 | 이유 |
 |---|---|---|
-| 컨테이너 이미지 | `ghcr.io/<org>/<repo>/isaac-lab:2.3.1` | 7절에서 빌드한 커스텀 이미지 |
+| 컨테이너 이미지 | `ghcr.io/cosmo0511/isaac-sim-env/isaac-lab:2.3.1` | 7절에서 빌드한 커스텀 이미지 |
 | 레지스트리 공급자 | GitHub Container Registry | |
 | 레지스트리 액세스 | **공개** | 익명 pull 가능, 인증 불필요 |
 | 시작 명령 | **비워둘 것** | 이미지의 CMD 가 처리합니다. ⚠️ 아래 경고 참고 |
@@ -208,7 +208,7 @@ CUDA 12.8 은 이미 일치합니다.
 ```
 Dockerfile 커밋
   → GitHub Actions (.github/workflows/build-image.yml)
-  → ghcr.io/<org>/<repo>/isaac-lab:2.3.1
+  → ghcr.io/cosmo0511/isaac-sim-env/isaac-lab:2.3.1
   → AIEEV 컨테이너 이미지 URL 에 입력
 ```
 
